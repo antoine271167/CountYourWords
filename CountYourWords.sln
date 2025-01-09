@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountYourWords.ConsoleApp", "CountYourWords.ConsoleApp\CountYourWords.ConsoleApp.csproj", "{E9A40A72-B8CF-4A01-9E4D-C74E3EB76850}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountYourWords.WordProcessing", "CountYourWords.WordProcessing\CountYourWords.WordProcessing.csproj", "{C2EBF023-FDF9-4619-B5DF-7EEE6D5B388B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountYourWords.Sorting", "CountYourWords.Sorting\CountYourWords.Sorting.csproj", "{175B78AF-93B8-4F5A-99F1-101BDFABE132}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountYourWords.WordProcessing.Tests", "CountYourWords.WordProcessing.Tests\CountYourWords.WordProcessing.Tests.csproj", "{85FA02EE-D82E-4220-A7D2-B2C2F3D8FC05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountYourWords.Sorting.Tests", "CountYourWords.Sorting.Tests\CountYourWords.Sorting.Tests.csproj", "{3A0FB182-E2AB-4B2B-B3A6-6DF9D3E8C2D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E3ED13F2-44B8-48DC-9E20-84645F21F51E}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9A40A72-B8CF-4A01-9E4D-C74E3EB76850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A40A72-B8CF-4A01-9E4D-C74E3EB76850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A40A72-B8CF-4A01-9E4D-C74E3EB76850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A40A72-B8CF-4A01-9E4D-C74E3EB76850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2EBF023-FDF9-4619-B5DF-7EEE6D5B388B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2EBF023-FDF9-4619-B5DF-7EEE6D5B388B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2EBF023-FDF9-4619-B5DF-7EEE6D5B388B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2EBF023-FDF9-4619-B5DF-7EEE6D5B388B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{175B78AF-93B8-4F5A-99F1-101BDFABE132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{175B78AF-93B8-4F5A-99F1-101BDFABE132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{175B78AF-93B8-4F5A-99F1-101BDFABE132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{175B78AF-93B8-4F5A-99F1-101BDFABE132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85FA02EE-D82E-4220-A7D2-B2C2F3D8FC05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85FA02EE-D82E-4220-A7D2-B2C2F3D8FC05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85FA02EE-D82E-4220-A7D2-B2C2F3D8FC05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85FA02EE-D82E-4220-A7D2-B2C2F3D8FC05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0FB182-E2AB-4B2B-B3A6-6DF9D3E8C2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0FB182-E2AB-4B2B-B3A6-6DF9D3E8C2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0FB182-E2AB-4B2B-B3A6-6DF9D3E8C2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0FB182-E2AB-4B2B-B3A6-6DF9D3E8C2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30599E5B-1333-4BDE-9FD8-4BC0E31BA88B}
+	EndGlobalSection
+EndGlobal
