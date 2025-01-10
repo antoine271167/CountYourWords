@@ -24,8 +24,4 @@
     <ProjectReference Include="..\CountYourWords.WordProcessing\CountYourWords.WordProcessing.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Using Include="NUnit.Framework" />
-  </ItemGroup>
-
 </Project>

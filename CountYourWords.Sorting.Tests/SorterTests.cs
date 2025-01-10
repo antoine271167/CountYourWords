@@ -1,6 +1,4 @@
 using CountYourWords.Sorting.Algorithms;
-using FluentAssertions;
-using Moq;
 
 namespace CountYourWords.Sorting.Tests;
 

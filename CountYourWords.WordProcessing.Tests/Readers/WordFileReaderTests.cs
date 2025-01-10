@@ -1,33 +1,61 @@
 ﻿using CountYourWords.WordProcessing.Readers;
-using FluentAssertions;
 
 namespace CountYourWords.WordProcessing.Tests.Readers;
 
 public class WordFileReaderTests
 {
-    [TestCase(0, "Word1")]
-    [TestCase(1, "Word2")]
-    [TestCase(2, "Word3")]
-    [TestCase(3, "Word4")]
-    [TestCase(4, "Word5")]
-    [TestCase(5, "Word6")]
-    public void Read_TextContainsWord_ShouldReturnWord(int wordIndex, string word)
+    [Test]
+    public void Read_ShouldReturnNull_WhenReaderIsEmpty()
     {
         // Arrange
-        const string text = "Word1,Word2;Word3\nWord4\rWord5 Word6";
+        using var reader = new StringReader(string.Empty);
+        var sut = new WordFileReader(reader);
+
+        // Act
+        var actual = sut.Read();
+
+        // Assert
+        actual.Should().BeNull();
+    }
+
+    [Test]
+    public void Read_ShouldReturnWord_WhenReaderContainsSingleWord()
+    {
+        // Arrange
+        using var reader = new StringReader("Word1");
+        var sut = new WordFileReader(reader);
+
+        // Act
+        var actual = sut.Read();
+
+        // Assert
+        actual.Should().Be("Word1");
+    }
+
+    [Test]
+    public void Read_TextWithVariousSeparators_ShouldReturnAllWords()
+    {
+        // Arrange
+        const string text = "Word1,Word2;Word3\nWord4\rWord5\u0001Word6 Word7[Word8";
 
         using var reader = new StringReader(text);
         var sut = new WordFileReader(reader);
 
         // Act
-        string? actual;
+        var words = new List<string?>();
+
+        string? word;
 
         do
         {
-            actual = sut.Read();
-        } while (wordIndex-- > 0);
+            word = sut.Read();
+            if (word != null)
+            {
+                words.Add(word);
+            }
+        } while (word != null);
 
         // Assert
-        actual.Should().Be(word);
+        string.Join(" ", words).Should().Be("Word1 Word2 Word3 Word4 Word5 Word6 Word7 Word8");
     }
 }

@@ -1,5 +1,4 @@
 ﻿using CountYourWords.WordProcessing.Summary;
-using FluentAssertions;
 
 namespace CountYourWords.WordProcessing.Tests.Summary;
 

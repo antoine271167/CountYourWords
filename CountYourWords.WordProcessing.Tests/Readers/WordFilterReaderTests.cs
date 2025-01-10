@@ -1,7 +1,5 @@
 ﻿using CountYourWords.WordProcessing.Filters;
 using CountYourWords.WordProcessing.Readers;
-using FluentAssertions;
-using Moq;
 
 namespace CountYourWords.WordProcessing.Tests.Readers;
 

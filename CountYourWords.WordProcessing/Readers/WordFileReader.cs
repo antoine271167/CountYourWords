@@ -4,7 +4,7 @@ namespace CountYourWords.WordProcessing.Readers;
 
 public class WordFileReader(TextReader reader) : IWordFileReader
 {
-    private static readonly char[] _otherBoundaryChars = ['\n', '\n', '[', ']', '{', '}', '<', '>', '(', ')'];
+    private static readonly char[] _otherBoundaryChars = ['[', ']', '{', '}', '<', '>', '(', ')'];
 
     public string? Read()
     {
@@ -20,11 +20,6 @@ public class WordFileReader(TextReader reader) : IWordFileReader
                 break;
             }
 
-            if (char.IsControl(character))
-            {
-                continue;
-            }
-
             word.Append(character);
         }
 
@@ -36,5 +31,6 @@ public class WordFileReader(TextReader reader) : IWordFileReader
         char.IsWhiteSpace(character) ||
         char.IsSeparator(character) ||
         char.IsPunctuation(character) ||
+        char.IsControl(character) ||
         _otherBoundaryChars.Contains(character);
 }
