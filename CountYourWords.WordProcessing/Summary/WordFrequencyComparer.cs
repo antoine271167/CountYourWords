@@ -1,6 +1,6 @@
 ﻿namespace CountYourWords.WordProcessing.Summary;
 
-public class WordFrequencyComparer : IComparer<WordFrequency>
+internal class WordFrequencyComparer : IComparer<WordFrequency>
 {
     public int Compare(WordFrequency? x, WordFrequency? y)
     {

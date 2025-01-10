@@ -1,6 +1,6 @@
 ﻿namespace CountYourWords.WordProcessing.Filters;
 
-public interface IWordFilter
+internal interface IWordFilter
 {
     bool IsAllowed(string word);
 }

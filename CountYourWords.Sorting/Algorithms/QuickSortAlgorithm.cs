@@ -1,6 +1,6 @@
 ﻿namespace CountYourWords.Sorting.Algorithms;
 
-public class QuickSortAlgorithm<TElement>(IComparer<TElement> comparer) : ISortAlgorithm<TElement>
+internal class QuickSortAlgorithm<TElement>(IComparer<TElement> comparer) : ISortAlgorithm<TElement>
 {
     public TElement[] Sort(TElement[] array) =>
         array.Length == 0 ? array : Sort(array, 0, array.Length - 1);
@@ -25,12 +25,14 @@ public class QuickSortAlgorithm<TElement>(IComparer<TElement> comparer) : ISortA
                 j--;
             }
 
-            if (i <= j)
+            if (i > j)
             {
-                (array[i], array[j]) = (array[j], array[i]);
-                i++;
-                j--;
+                continue;
             }
+
+            (array[i], array[j]) = (array[j], array[i]);
+            i++;
+            j--;
         }
 
         if (leftIndex < j)

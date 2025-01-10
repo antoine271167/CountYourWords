@@ -2,7 +2,7 @@
 
 namespace CountYourWords.Sorting;
 
-public class Sorter<TElement>(IEnumerable<ISortAlgorithm<TElement>> algorithms) : ISorter<TElement>
+internal class Sorter<TElement>(IEnumerable<ISortAlgorithm<TElement>> algorithms) : ISorter<TElement>
 {
     public TElement[] Sort(TElement[] array)
     {

@@ -2,7 +2,7 @@
 
 namespace CountYourWords.WordProcessing.Readers;
 
-public class WordFilterReader(IWordReader reader, IWordFilter filter) : IWordFilterReader
+internal class WordFilterReader(IWordReader reader, IWordFilter filter) : IWordFilterReader
 {
     public string? Read()
     {

@@ -1,6 +1,6 @@
 ﻿namespace CountYourWords.Sorting.Algorithms;
 
-public class BubbleSortAlgorithm<TElement>(IComparer<TElement> comparer) : ISortAlgorithm<TElement>
+internal class BubbleSortAlgorithm<TElement>(IComparer<TElement> comparer) : ISortAlgorithm<TElement>
 {
     private const int MaxArrayLength = 10;
 

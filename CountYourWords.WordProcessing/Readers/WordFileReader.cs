@@ -2,7 +2,7 @@
 
 namespace CountYourWords.WordProcessing.Readers;
 
-public class WordFileReader(TextReader reader) : IWordFileReader
+internal class WordFileReader(TextReader reader) : IWordFileReader
 {
     private static readonly char[] _otherBoundaryChars = ['[', ']', '{', '}', '<', '>', '(', ')'];
 

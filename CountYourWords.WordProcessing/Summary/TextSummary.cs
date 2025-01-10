@@ -1,6 +1,6 @@
 ﻿namespace CountYourWords.WordProcessing.Summary;
 
-public class TextSummary : ITextSummary
+internal class TextSummary : ITextSummary
 {
     private readonly Dictionary<string, int> _wordCount = new();
     private int _totalWordCount;
