@@ -1,6 +1,5 @@
 ﻿using CountYourWords.Sorting;
 using CountYourWords.WordProcessing;
-using CountYourWords.WordProcessing.Readers;
 using CountYourWords.WordProcessing.Summary;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -10,28 +9,25 @@ namespace CountYourWords.ConsoleApp;
 internal class Program
 {
     private const string InputFileName = "input.txt";
-    private static readonly IHost _host = CreateHostBuilder().Build();
+    private static readonly IHost _host = CreateHost();
 
     internal static void Main(string[] args)
     {
-        var readerService = _host.Services.GetRequiredService<IWordFilterReader>();
-        var summaryService = _host.Services.GetRequiredService<ITextSummary>();
+        var services = _host.Services.GetRequiredService<Services>();
 
-        while (readerService.Read() is { } word)
+        while (services.Reader.Read() is { } word)
         {
-            summaryService.Add(word);
+            services.Summary.Add(word);
         }
 
-        WriteOutputToConsole(summaryService);
+        WriteOutputToConsole(services);
     }
 
-    private static void WriteOutputToConsole(ITextSummary summary)
+    private static void WriteOutputToConsole(Services services)
     {
-        var sorter = _host.Services.GetRequiredService<ISorter<WordFrequency>>();
+        var wordFrequencies = services.Sorter.Sort(services.Summary.GetWordFrequencies());
 
-        var wordFrequencies = sorter.Sort(summary.GetWordFrequencies());
-
-        Console.WriteLine($"Number of words: {summary.GetTotalWordCount()}");
+        Console.WriteLine($"Number of words: {services.Summary.GetTotalWordCount()}");
         Console.WriteLine();
 
         foreach (var (word, frequency) in wordFrequencies)
@@ -40,8 +36,12 @@ internal class Program
         }
     }
 
-    private static IHostBuilder CreateHostBuilder() =>
-        Host.CreateDefaultBuilder([]).ConfigureServices((_, services) => services
+    private static IHost CreateHost() =>
+        Host.CreateDefaultBuilder().ConfigureServices(ConfigureServices).Build();
+
+    internal static void ConfigureServices(HostBuilderContext? context, IServiceCollection services) =>
+        services
+            .AddSingleton<Services>()
             .AddWordProcessingDependencies(InputFileName)
-            .AddSortingDependencies<WordFrequency>());
+            .AddSortingDependencies<WordFrequency>();
 }
